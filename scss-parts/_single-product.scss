@@ -1,4 +1,10 @@
 .single-product {
+    .product_title  {
+        font-size: 36px;
+        @media screen and (min-width: 990px) {
+        font-size: 60px;
+        }
+    }
     .hero-image {
         position: absolute;
         top: 0;
@@ -51,7 +57,10 @@
     .cart {
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 100%;
+        @media screen and (min-width: 990px) {
+            width: 50%;
+        }
     }
     .button {
         height: 55px;
@@ -82,7 +91,9 @@
         background-color: var(--pink) !important;
     }
     .woocommerce-product-gallery {
-        width: 30% !important;
+        @media screen and (min-width: 768px) {
+            width: 30% !important;                    
+        }
         img {
             min-height: 700px !important;
             object-fit: cover;
@@ -99,6 +110,67 @@
         }
         #size {
             max-width: 100px;
+        }
+    }
+    .product-share {
+        margin-top: 100px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            h2 {
+                color: var(--orange);
+                font-size: 36px;
+                max-width: 600px;
+                @media screen and (min-width: 990px) {
+                font-size: 60px;
+                }
+            }
+            .text {
+                width: 100%;
+                @media screen and (min-width: 768px) {
+                    width: 70%;
+                }
+                background: var(--grey);
+                padding: 50px;
+                p {
+                    padding: 20px 0;
+                    line-height: 1.8;
+                    max-width: 500px;
+                }
+            }
+            .image {
+                width: 100%;
+                @media screen and (min-width: 768px) {
+                    width: 30%;                    
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .buttons {
+                display: flex;
+                cursor: pointer;
+                div {
+                    padding: 20px 10px;
+                    margin: 20px 4px;
+                    color: var(--white);
+                    width: 180px;
+                    text-align: center;
+                    border-radius: 2px;
+                    letter-spacing: 3px;
+                }
+                div:nth-child(1) {
+                    background: var(--orange);
+                }
+                div:nth-child(2) {
+                    background: var(--green);
+                }
+                div:nth-child(3) {
+                   background: var(--blue);
+                }
+            }
         }
     }
 }

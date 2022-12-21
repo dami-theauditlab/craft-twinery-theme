@@ -8,6 +8,7 @@
   --grey: #efeff1;
   --green: #c8d454;
   --black: #000000;
+  --white: #ffffff;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -3320,6 +3321,16 @@ h5 {
   }
 }
 
+.single-product .product_title {
+  font-size: 36px;
+}
+
+@media screen and (min-width: 990px) {
+  .single-product .product_title {
+    font-size: 60px;
+  }
+}
+
 .single-product .hero-image {
   position: absolute;
   top: 0;
@@ -3387,7 +3398,13 @@ h5 {
 .single-product .cart {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
+}
+
+@media screen and (min-width: 990px) {
+  .single-product .cart {
+    width: 50%;
+  }
 }
 
 .single-product .button {
@@ -3423,8 +3440,10 @@ h5 {
   background-color: var(--pink) !important;
 }
 
-.single-product .woocommerce-product-gallery {
-  width: 30% !important;
+@media screen and (min-width: 768px) {
+  .single-product .woocommerce-product-gallery {
+    width: 30% !important;
+  }
 }
 
 .single-product .woocommerce-product-gallery img {
@@ -3443,5 +3462,87 @@ h5 {
 
 .single-product .variations #size {
   max-width: 100px;
+}
+
+.single-product .product-share {
+  margin-top: 100px;
+}
+
+.single-product .product-share .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-product .product-share .container h2 {
+  color: var(--orange);
+  font-size: 36px;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 990px) {
+  .single-product .product-share .container h2 {
+    font-size: 60px;
+  }
+}
+
+.single-product .product-share .container .text {
+  width: 100%;
+  background: var(--grey);
+  padding: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .single-product .product-share .container .text {
+    width: 70%;
+  }
+}
+
+.single-product .product-share .container .text p {
+  padding: 20px 0;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.single-product .product-share .container .image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .single-product .product-share .container .image {
+    width: 30%;
+  }
+}
+
+.single-product .product-share .container .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.single-product .product-share .container .buttons {
+  display: flex;
+  cursor: pointer;
+}
+
+.single-product .product-share .container .buttons div {
+  padding: 20px 10px;
+  margin: 20px 4px;
+  color: var(--white);
+  width: 180px;
+  text-align: center;
+  border-radius: 2px;
+  letter-spacing: 3px;
+}
+
+.single-product .product-share .container .buttons div:nth-child(1) {
+  background: var(--orange);
+}
+
+.single-product .product-share .container .buttons div:nth-child(2) {
+  background: var(--green);
+}
+
+.single-product .product-share .container .buttons div:nth-child(3) {
+  background: var(--blue);
 }
 /*# sourceMappingURL=style.css.map */
