@@ -27,6 +27,14 @@ jQuery(document).ready(function($) {
   });
 
   jQuery(".ex-vat").insertAfter(".home .woocommerce-Price-amount");
+//   jQuery(".product-info .variations").insertAfter(".product-info .quantity");
+
+  // Adding text on variation selection
+  jQuery(".variations label").prepend('Please choose ');
+
+
+  jQuery('#size').attr("placeholder", "Type placeholder");
+
 
   $(window).resize(function(){
       if(screen.width >= 700){

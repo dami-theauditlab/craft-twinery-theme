@@ -89,4 +89,16 @@
 
         }
     }
+    .variations {
+        .label {
+            width: 100%;
+        }
+        .reset_variations {
+            position: absolute;
+            margin-top: 10px;
+        }
+        #size {
+            max-width: 100px;
+        }
+    }
 }

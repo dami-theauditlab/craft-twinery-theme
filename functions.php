@@ -14,6 +14,16 @@
         register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'generic' ) ) );
     }
 
+    // Footer Menu
+    function wpb_custom_footer_menu() {
+        register_nav_menus(
+        array(
+            'main-footer-menu' => __( 'Main Footer Menu' )
+        )
+        );
+    }
+    add_action( 'init', 'wpb_custom_footer_menu' );
+
     wp_enqueue_script( 'jquery' );
 
     // -------- Bootstrap CDN
@@ -72,4 +82,12 @@
         }
       }
       add_action('init', 'admin_bar' );
+
+    // --------- Moving price lower on the page
+    add_action('woocommerce_single_product_summary', 'move_single_product_price', 1);
+    function move_single_product_price() {
+        remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+        add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 29);
+    }
+
 ?>

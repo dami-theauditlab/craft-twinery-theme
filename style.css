@@ -1186,12 +1186,12 @@ form .wpcf7-select:focus, form .wpcf7-select:visited {
   font-size: 18px !important;
 }
 
-.woocommerce-cart #content, .woocommerce-account #content {
+.woocommerce-cart #content, .woocommerce-account #content, .page-template-search-page #content {
   padding: 50px 0;
 }
 
 @media screen and (min-width: 768px) {
-  .woocommerce-cart #content, .woocommerce-account #content {
+  .woocommerce-cart #content, .woocommerce-account #content, .page-template-search-page #content {
     padding: 250px 0 !important;
   }
 }
@@ -2382,25 +2382,42 @@ h5 {
 
 #footer .bottom-footer .copyright .image {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 30px;
   max-width: 500px;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
   #footer .bottom-footer .copyright .image {
     justify-content: space-between;
+    flex-wrap: unset;
+    margin: unset;
   }
 }
 
 #footer .bottom-footer .copyright .image .near {
   width: 110px;
   object-fit: contain;
+  margin: 30px 0;
+}
+
+@media screen and (min-width: 768px) {
+  #footer .bottom-footer .copyright .image .near {
+    margin: unset;
+  }
 }
 
 #footer .bottom-footer .copyright .image .cards {
-  width: 250px;
+  width: 100%;
   object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+  #footer .bottom-footer .copyright .image .cards {
+    width: 250px;
+  }
 }
 
 #footer .bottom-footer li {
@@ -3413,5 +3430,18 @@ h5 {
 .single-product .woocommerce-product-gallery img {
   min-height: 700px !important;
   object-fit: cover;
+}
+
+.single-product .variations .label {
+  width: 100%;
+}
+
+.single-product .variations .reset_variations {
+  position: absolute;
+  margin-top: 10px;
+}
+
+.single-product .variations #size {
+  max-width: 100px;
 }
 /*# sourceMappingURL=style.css.map */
