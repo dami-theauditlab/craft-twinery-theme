@@ -40,7 +40,11 @@
             <div class="menu-top">
                 <div class="phone-number"><a href="tel:01204897642"><span><img src="<?php bloginfo('template_url'); ?>/images/phone-icon.png" alt="Phone Icon">01204 897642</span></a></div>
                 <span class="header-info">
-                    <div class="basket"><a href="/basket"><span>VIEW BASKET<img src="<?php bloginfo('template_url'); ?>/images/basket.png" alt="Basket Icon"></span></a></div>
+                    <div class="basket">
+                        <a href="/basket"><span>VIEW BASKET<img src="<?php bloginfo('template_url'); ?>/images/basket.png" alt="Basket Icon"></span>
+                        <span class="cart-count"><?php echo count(WC()->cart->get_cart()); ?></span>
+                        </a>
+                    </div>
                     <div id="search">
                         <img class="search-icon" src="<?php bloginfo('template_url'); ?>/images/search.svg" alt="Search Icon">
                         <?php get_search_form(); ?>

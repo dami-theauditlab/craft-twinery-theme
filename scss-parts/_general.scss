@@ -611,3 +611,18 @@ form .wpcf7-select {
 .woocommerce-product-gallery {
   opacity: 1 !important;
 }
+.description {
+  text-align: center;
+  text-align: -webkit-center;
+  .cat-button {
+    background: var(--orange);
+    max-width: 300px;
+    margin: 50px 0;
+    padding: 15px 0;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+}
+#productCategoryTemplateCs {
+  margin-top: 50px;
+}

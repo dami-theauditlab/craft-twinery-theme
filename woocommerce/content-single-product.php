@@ -84,7 +84,7 @@ if ( post_password_required() ) {
 			<h2>Have a question?<br> Want to share with a friend? Wish to write a review?</h2>
 			<p>Click on the relative box below to contact us, share the product or write a review on how the product was...</p>
 			<div class="buttons">
-				<div>CONTACT US</div>
+				<a href="/contact-us"><div>CONTACT US</div></a>
 				<div>EMAIL FRIEND</div>
 				<div>REVIEW</div>
 			</div>

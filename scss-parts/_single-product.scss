@@ -5,6 +5,9 @@
         font-size: 60px;
         }
     }
+    .product_meta {
+        display: none;
+    }
     .hero-image {
         position: absolute;
         top: 0;
@@ -21,12 +24,14 @@
             max-width: unset;
         }
     }
-    .product {
+    #productSingleTemplateCs {
         margin-top: 200px;
-        background: var(--grey);
         @media screen and (min-width: 768px) {
             margin-top: 300px;
         }
+    }
+    .product {
+        background: var(--grey);
     }
     .woocommerce {
         & .product {
