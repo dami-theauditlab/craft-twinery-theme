@@ -90,11 +90,13 @@
         add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 29);
     }
 
-  // Increase WooCommerce Variation Limit
-function custom_wc_ajax_variation_threshold( $qty, $product ) {
-    return 100;
+    // Increase WooCommerce Variation Limit
+    function custom_wc_ajax_variation_threshold( $qty, $product ) {
+        return 100;
     }
     
     add_filter( 'woocommerce_ajax_variation_threshold', 'custom_wc_ajax_variation_threshold', 100, 2 );
+
+    // 
 
 ?>

@@ -1,133 +1,93 @@
+<?php get_header(); ?>
+
 <?php
 /**
- * The Template for displaying product archives, including the main shop page which is a post type archive
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 3.4.0
- */
-
-defined( 'ABSPATH' ) || exit;
-
-get_header( 'shop' );
-
-/**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked WC_Structured_Data::generate_website_data() - 30
- */
+* A Simple Category Template
+*/
+ 
 $current_cat = get_queried_object();
-?>
-<section id="productCategoryTopSection">
-	<div class="hero-image" style="background-image: url('<?php bloginfo('template_url'); ?>/images/cat-hero-image.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">			
-				<?php if(is_shop() ) {?>
-					<h1>Shop</h1>
-				<?php }else { ?>
-					<h1> <?php echo $current_cat->name; ?></h1>
-				<?php }?> 
-                </div>
-            </div>
-        </div>	
-    </div>
-	
-	<?php if($current_cat->parent) { ?>
-		<div class="container description">
-			<?php echo category_description($current_cat->ID); ?>
-			<a href="<?php echo get_category_link(39); ?>"><div class="cat-button">SEE THE ENTIRE <?php echo get_the_category_by_ID($current_cat->parent); ?> RANGE</div></a>
+get_header(); ?> 
+ 
+<section id="primary" class="site-content">
+	<div id="content" role="main">
+		<div class="hero-image" style="background-image: url('<?php bloginfo('template_url'); ?>/images/cat-hero-image.jpg')">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">			
+					<?php if(is_shop() ) {?>
+						<h1>Shop</h1>
+					<?php }else { ?>
+						<h1> <?php echo $current_cat->name; ?></h1>
+					<?php }?> 
+					</div>
+				</div>
+			</div>	
 		</div>
-	<?php } ?>
-
-	<header class="woocommerce-products-header">
-		<div class="container">
-			<div class="row">
-				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-				<?php endif; ?>
-			</div>
-		</div>
-	</header>
-
-</section>
-
-<section id="productCategoryTemplateCs">
 	<div class="container">
-		<?php
-		if ( woocommerce_product_loop() ) {
-
+		<div class="category">
+			<?php 
+			// Check if there are any posts to display
+			if ( have_posts() ) : ?>
+			
+			<?php if($current_cat->parent) { ?>
+				<div class="container description">
+					<?php echo category_description($current_cat->ID); ?>
+					<a href="<?php echo get_category_link(39); ?>"><div class="cat-button">SEE THE ENTIRE <?php echo get_the_category_by_ID($current_cat->parent); ?> RANGE</div></a>
+				</div>
+			<?php } ?>
+			
+			
+			<?php
+			// Display optional category description
+			if ( category_description() ) : ?>
+			<div class="archive-meta"><?php echo category_description(); ?></div>
+			<?php endif; ?>
+			</header>
+			
+			<?php
+			
+			// The Loop
+			while ( have_posts() ) : the_post(); ?>
+			<div class="post">
+				<div class="image">
+					<a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>"></a>
+				</div>
+				<div class="info">
+			
+					<?php 
+					
 			/**
-			 * Hook: woocommerce_before_shop_loop.
+			 * Hook: woocommerce_single_product_summary.
 			 *
-			 * @hooked woocommerce_output_all_notices - 10
-			 * @hooked woocommerce_result_count - 20
-			 * @hooked woocommerce_catalog_ordering - 30
+			 * @hooked woocommerce_template_single_title - 5
+			 * @hooked woocommerce_template_single_rating - 10
+			 * @hooked woocommerce_template_single_price - 10
+			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_meta - 40
+			 * @hooked woocommerce_template_single_sharing - 50
+			 * @hooked WC_Structured_Data::generate_product_data() - 60
+			 * @hooked woocommerce_template_single_excerpt - 20
+			 * 
 			 */
-			do_action( 'woocommerce_before_shop_loop' );
-
-			woocommerce_product_loop_start();
-
-			if ( wc_get_loop_prop( 'total' ) ) {
-				while ( have_posts() ) {
-					the_post();
-
-					/**
-					 * Hook: woocommerce_shop_loop.
-					 */
-					do_action( 'woocommerce_shop_loop' );
-
-					wc_get_template_part( 'content', 'product' );
-				}
-			}
-
-			woocommerce_product_loop_end();
-
-			/**
-			 * Hook: woocommerce_after_shop_loop.
-			 *
-			 * @hooked woocommerce_pagination - 10
-			 */
-			do_action( 'woocommerce_after_shop_loop' );
-		} else {
-			/**
-			 * Hook: woocommerce_no_products_found.
-			 *
-			 * @hooked wc_no_products_found - 10
-			 */
-			do_action( 'woocommerce_no_products_found' );
-		}	
-
-		
-		/**
-		 * Hook: woocommerce_after_main_content.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-
-
-
-		/**aa
-		 * Hook: woocommerce_sidebar.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-
-		?>
-
+			do_action( 'woocommerce_single_product_summary' );
+					?>
+				</div>
+			</div>
+			
+			<?php endwhile; 
+			
+			else: ?>
+			<p>Sorry, no posts matched your criteria.</p>
+			
+			
+			<?php endif; ?>
+				
+			</div>
+			<div>
+				<div class="alignleft"><?php previous_posts_link('&laquo; Previous') ?></div>
+				<div class="alignright"><?php next_posts_link('Next &raquo;') ?></div>
+			</div>
 		</div>
 	</div>
 </section>
-
-<?php
-get_footer( 'shop' );
+<?php get_footer(); ?>

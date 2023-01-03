@@ -54,6 +54,9 @@
   button {
       border: none;
       background: none;
+      @media screen and (min-width: 768px) {
+          display: none;
+      }
   }
   .menu-item {
       font-size: 20px;
@@ -96,6 +99,7 @@
       display: none;
       position: unset;
       margin-top: 10px;
+      min-width: 240px;
       @media screen and (min-width: 1200px) {
           margin-top: 0;
           position: absolute;
@@ -111,6 +115,9 @@
               .sub-menu {
                   top: -226px;
               }
+          }
+          a {
+              display: block;
           }
       }
       .menu-item-has-children  {
