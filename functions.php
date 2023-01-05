@@ -97,6 +97,22 @@
     
     add_filter( 'woocommerce_ajax_variation_threshold', 'custom_wc_ajax_variation_threshold', 100, 2 );
 
-    // 
+    // Change Add to basket text
+    // add_filter( 'gettext', 'change_woocommerce_strings', 999, 3 );
+    
+    // function change_woocommerce_strings( $changed, $text, $domain ) {
+    // $changed = str_ireplace( 'Add to basket', 'View More', $changed );
+
+    // return $changed;
+    // }
+
+    // Change Select option
+    add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
+        global $product;
+        if ( $product->is_type( 'variable' ) ) {
+            $text = $product->is_purchasable() ? __( 'View More', 'woocommerce' ) : __( 'Read more', 'woocommerce' );
+        }
+        return $text;
+    }, 10 );
 
 ?>

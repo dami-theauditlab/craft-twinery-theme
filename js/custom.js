@@ -69,11 +69,5 @@ jQuery(document).ready(function($) {
       }
   } 
 
-  // Replacing h1 to h2
-  const hOnes = document.querySelectorAll('.category h1');
-
-    for (let i = 0; i < hOnes.length; i++) {
-    hOnes[i].outerHTML = hOnes[i].outerHTML.replace(/h1/g,"h2");
-    };
 });
 

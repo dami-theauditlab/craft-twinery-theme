@@ -178,4 +178,12 @@
             }
         }
     }
+    .woocommerce-message {
+        .button {
+            margin-top: 0 !important;
+            color: var(--white);
+            display: flex;
+           align-items: center;
+        }
+    }
 }

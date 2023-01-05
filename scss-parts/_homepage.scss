@@ -104,9 +104,10 @@
         .container {
             position: relative;
             z-index: 3;
-            bottom: 10px;
+            bottom: 90px;
             @media screen and (min-width: 768px) {
                 margin-top: 50px;
+                bottom: 10px;
             }
         }
        
