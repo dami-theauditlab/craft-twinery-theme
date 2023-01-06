@@ -652,12 +652,20 @@ form .wpcf7-select {
   }
 }
 .pagination {
-  background: var(--purple);
-  justify-content: center;
-  margin: 0 auto;
-  a {
-    color: var(--white);
-    padding: 10px;
+    width: 350px;
+    margin: 0 auto;
+    justify-content: center;
+    background: var(--purple);
+    margin-top: 90px;
+    span {
+      justify-content: center;
+      margin: 0 auto;
+      display: flex;
+      padding: 10px;
+    a {
+      color: var(--white);
+      padding: 10px;
+    }
   }
 }
 

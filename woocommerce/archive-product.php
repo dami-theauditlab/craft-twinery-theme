@@ -84,8 +84,10 @@ get_header(); ?>
 				
 			</div>
 			<div class="pagination">
-				<div class="alignleft"><?php previous_posts_link('&laquo; Previous') ?></div>
-				<div class="alignright"><?php next_posts_link('Next &raquo;') ?></div>
+				<span>
+					<div class="alignleft"><?php previous_posts_link('&laquo; Previous') ?></div>
+					<div class="alignright"><?php next_posts_link('Next &raquo;') ?></div>
+				</span>
 			</div>
 		</div>
 	</div>
