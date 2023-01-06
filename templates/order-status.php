@@ -37,17 +37,25 @@
                             <input type="submit" id="orderSubmit" value="VIEW ORDER STATUS">
                         </form>
                     </div>
-						<?php var_dump(get_post_type(68745) == "shop_order"); ?>
-						<?php if ($orderId !== NULL || $orderId !== NULL ) { ?>
-							<div>
-								
-								<?php 
-									$order = wc_get_order( $orderId);
-										// var_dump($order);
-										echo($order->status);
-										echo($order->get_billing_email());
-								?>
+						<?php  $orderq   = wc_get_order($orderId);?>
+						<?php if (!empty($orderq)) { ?>
+							<div class="order">
+								<?php $order = wc_get_order( $orderId); ?>
+								<div class="order-bar">
+									<?php if($order->status === "processing") { ?>
+										<span>Pending Payment</span>
+										<span>Processing</span>
+									<?php } ?>
+									<?php if($order->status === "completed") { ?>
+										<span>Pending Payment</span>
+										<span>Processing</span>
+										<span>Completed</span>
+									<?php } ?>
+									<h2><?php echo($order->status); ?>
+								</div>
 							</div>
+						<?php } else { ?>
+							<div> Sorry Your Order Number is Invalid </div>
 						<?php } ?>
 				</div>
 			</div>
