@@ -210,8 +210,8 @@ body{
 .invalid {
   color: var(--red);
 }
-.hide-pgblock {
-  display: none;
+.hide {
+  visibility: hidden;
 }
 
 .container {
@@ -673,4 +673,12 @@ form .wpcf7-select {
   max-height: 270px;
   object-fit: cover;
   object-position: bottom;
+}
+.product_title  {
+  color: var(--purple) !important;
+}
+.price {
+  color: var(--black) !important;
+  font-weight: 900;
+  display: inline-block;
 }

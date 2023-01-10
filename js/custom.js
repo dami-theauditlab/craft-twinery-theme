@@ -26,7 +26,12 @@ jQuery(document).ready(function($) {
       $(this).toggleClass("active");
   });
 
-  jQuery(".ex-vat").insertAfter(".home .woocommerce-Price-amount");
+
+  //Adding VAT to pricing
+
+  jQuery(".ex-vat").insertAfter(".home .woocommerce-Price-currencySymbol");
+  jQuery(".incl-vat").insertAfter(".single-product .woocommerce-Price-amount.amount");
+
 //   jQuery(".product-info .variations").insertAfter(".product-info .quantity");
 
   // Adding text on variation selection

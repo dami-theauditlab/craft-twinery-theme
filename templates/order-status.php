@@ -41,9 +41,10 @@
 										<span class="line"></span>
 									</div>
 									<div class="order-step">
-										<span class="circle"></span><p>Processing</p></span>
+										<span class="circle"></span><p> Processing</p></span>
+										<span class="line hide"></span>
 									</div>
-									<div class="order-step"><span class="circle"></span>Completed</span></div>
+									<div class="order-step"><span class="circle"></span><p>Completed</p></span></div>
 								<?php } ?>
 								<?php if($order->status === "completed") { ?>
 									<div class="order-step">
