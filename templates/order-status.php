@@ -25,39 +25,54 @@
 		<?php
             } 
         ?> 
-		<div class="container">
+		<div class="container order-container">
 			<div class="row">
 				<div class="col-12">
+
+				<?php  $orderq   = wc_get_order($orderId);?>
+				<?php if ($email && $orderId) { ?>
+					<div class="order">
+					<?php if (!empty($orderq)) { ?>
+							<?php $order = wc_get_order( $orderId); ?>
+							<div class="order-bar">
+								<?php if($order->status === "processing") { ?>
+									<div class="order-step">
+										<span class="circle"></span><p>Pending Payment</p>
+										<span class="line"></span>
+									</div>
+									<div class="order-step">
+										<span class="circle"></span><p>Processing</p></span>
+									</div>
+									<div class="order-step"><span class="circle"></span>Completed</span></div>
+								<?php } ?>
+								<?php if($order->status === "completed") { ?>
+									<div class="order-step">
+										<span class="circle"></span><p>Pending Payment</p>
+										<span class="line"></span>
+									</div>
+									<div class="order-step">
+										<span class="circle"></span><p> Processing</p></span>
+										<span class="line"></span>
+									</div>
+									<div class="order-step"><span class="circle"></span><p>Completed</p></span></div>
+								<?php } ?>
+					<?php } else { ?>
+						<div><h2>Invalid Order Number / Email Address</h2></div>
+					<?php } ?>
+				</div>
+
+				<?php } ?>
+					</div>
                     <div class="verification">
                         <h2>View Order Status</h2>
                         <p>Please enter your order id and the email address used on the order.</p>
                         <form>
                             <input type="text" id="orderId" name="orderId" placeholder="ORDER ID" required><br><br>
                             <input type="email" id="email" name="email" placeholder="EMAIL" required><br><br>
-                            <input type="submit" id="orderSubmit" value="VIEW ORDER STATUS">
+                            <input type="submit" id="orderSubmit" name="submit" value="VIEW ORDER STATUS">
                         </form>
                     </div>
-						<?php  $orderq   = wc_get_order($orderId);?>
-						<?php if (!empty($orderq)) { ?>
-							<div class="order">
-								<?php $order = wc_get_order( $orderId); ?>
-								<div class="order-bar">
-									<?php if($order->status === "processing") { ?>
-										<span>Pending Payment</span>
-										<span>Processing</span>
-									<?php } ?>
-									<?php if($order->status === "completed") { ?>
-										<span>Pending Payment</span>
-										<span>Processing</span>
-										<span>Completed</span>
-									<?php } ?>
-									<h2><?php echo($order->status); ?>
-								</div>
-							</div>
-						<?php } else { ?>
-							<div> Sorry Your Order Number is Invalid </div>
-						<?php } ?>
-				</div>
+					
 			</div>
 		</div>
 	</section>

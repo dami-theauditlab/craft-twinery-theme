@@ -115,4 +115,15 @@
         return $text;
     }, 10 );
 
+    function woocommerce_hide_out_of_stock_items( $pre_option ) {
+    
+        // Disable hide option dynamicaly on product page only
+        if(is_product()){
+            return 'no';
+        }
+    
+        return $pre_option;
+    }
+    add_filter( 'pre_option_woocommerce_hide_out_of_stock_items', 'woocommerce_hide_out_of_stock_items' );
+
 ?>
