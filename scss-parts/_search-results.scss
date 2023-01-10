@@ -1,20 +1,41 @@
 .search-results {
+    h2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #search-page label {
+        width: 100%;
+        input {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+  
     .container {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: left;
+        .product-title {
+            line-height: 1;
+            font-size: 26px;
+            color: var(--purple);
+            margin-bottom: 30px;
+        }
         .card {
-            width: 23%;
+            width: 48%;
             margin-bottom: 25px;
             margin: 1%;
             img {
-                height: 300px;
+                height: 100%;
                 object-fit: cover;
             }
         }
         .card-text {
             padding: 10px;
+            a, h4, p {
+                color: var(--black);
+            }
         }
     }
     #content {
@@ -29,10 +50,6 @@
         @media screen and (min-width: 1400px) {
             max-width: 1200px !important;
         }
-    }
-    h2 {
-        width: 100%;
-        margin-bottom: 50px;
     }
     .header { 
         width: 100%;
@@ -118,6 +135,15 @@
             width: 100%;
             margin: 40px 0 30px 0;
         }
+    }
+    .row {
+        width: 100%;
+    }
+    .card-header {
+        padding: 0;
+        display: flex;
+        background: var(--white);
+        border-bottom: 0;
     }
 
 }

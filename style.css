@@ -1181,12 +1181,12 @@ form .wpcf7-select:focus, form .wpcf7-select:visited {
   font-size: 18px !important;
 }
 
-.woocommerce-cart #content, .woocommerce-account #content, .page-template-search-page #content {
+.woocommerce-cart #content, .woocommerce-account #content {
   padding: 50px 0;
 }
 
 @media screen and (min-width: 768px) {
-  .woocommerce-cart #content, .woocommerce-account #content, .page-template-search-page #content {
+  .woocommerce-cart #content, .woocommerce-account #content {
     padding: 250px 0 !important;
   }
 }
@@ -2529,6 +2529,20 @@ h5 {
   margin-top: 20px;
 }
 
+.search-results h2 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.search-results #search-page label {
+  width: 100%;
+}
+
+.search-results #search-page label input {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
 .search-results .container {
   width: 100%;
   display: flex;
@@ -2536,19 +2550,30 @@ h5 {
   justify-content: left;
 }
 
+.search-results .container .product-title {
+  line-height: 1;
+  font-size: 26px;
+  color: var(--purple);
+  margin-bottom: 30px;
+}
+
 .search-results .container .card {
-  width: 23%;
+  width: 48%;
   margin-bottom: 25px;
   margin: 1%;
 }
 
 .search-results .container .card img {
-  height: 300px;
+  height: 100%;
   object-fit: cover;
 }
 
 .search-results .container .card-text {
   padding: 10px;
+}
+
+.search-results .container .card-text a, .search-results .container .card-text h4, .search-results .container .card-text p {
+  color: var(--black);
 }
 
 .search-results #content {
@@ -2565,11 +2590,6 @@ h5 {
   .search-results #content {
     max-width: 1200px !important;
   }
-}
-
-.search-results h2 {
-  width: 100%;
-  margin-bottom: 50px;
 }
 
 .search-results .header {
@@ -2669,6 +2689,17 @@ h5 {
 .search-results .search-div .buttons {
   width: 100%;
   margin: 40px 0 30px 0;
+}
+
+.search-results .row {
+  width: 100%;
+}
+
+.search-results .card-header {
+  padding: 0;
+  display: flex;
+  background: var(--white);
+  border-bottom: 0;
 }
 
 #contact-page .container {
@@ -3715,6 +3746,10 @@ h5 {
 .archive .container .post .info {
   width: 65%;
   padding: 20px;
+}
+
+.archive .container .post .info .product_title {
+  color: var(--purple);
 }
 
 #order-status .order-container {

@@ -2,9 +2,15 @@
     get_header();
 ?>
 <div>
-<?php   // If post show on this page
+<?php  if (!is_search()) { // If post show on this page
         include "posts.php";
+    }
 ?>
+<?php  if (is_search()) { // If post show on this page
+        include "search-page.php";
+    }
+?>
+
 
 
 </div>

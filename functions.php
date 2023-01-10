@@ -126,4 +126,17 @@
     }
     add_filter( 'pre_option_woocommerce_hide_out_of_stock_items', 'woocommerce_hide_out_of_stock_items' );
 
+    
+    //Only show products in the front-end search results
+    function lw_search_filter_pages($query) {
+    if ($query->is_search) {
+    $query->set('post_type', 'product');
+    $query->set( 'wc_query', 'product_query' );
+    }
+    return $query;
+    }
+    
+    add_filter('pre_get_posts','lw_search_filter_pages');
+
+
 ?>

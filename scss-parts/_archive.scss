@@ -31,6 +31,9 @@
             .info {
                 width: 65%;
                 padding: 20px;
+                .product_title {
+                    color: var(--purple);
+                }
             }
         }
     }

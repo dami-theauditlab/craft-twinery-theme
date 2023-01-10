@@ -10,19 +10,15 @@
 ?>
 
 	<section id="search_page">
-		<?php if ( $search_page_hero_section === 'yes') { ?>
-			<div class="hero-image" style="background-image: url('<?php echo $search_page_hero_image['url']; ?>')">
+			<div class="hero-image" style="background-image: url('<?php bloginfo('template_url'); ?>/images/hero-image2.jpg')">
 				<div class="container">
 					<div class="row">
 						<div class="col-12">			
-							<h1 class="title"><?php echo $search_page_hero_title; ?></h1>
+							<h1 class="title">Search</h1>
 						</div>
 					</div>
 				</div>	
 			</div>
-		<?php
-            } 
-        ?> 
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
