@@ -138,5 +138,21 @@
     
     add_filter('pre_get_posts','lw_search_filter_pages');
 
+    // Changing price gap to from price
+    add_filter( 'woocommerce_get_price_html', 'cssigniter_change_variable_price_display', 10, 2 );
+    function cssigniter_change_variable_price_display( $price, $product_obj ) {
+        global $product;
+
+        if ( 'variable' !== $product->get_type() || 'product_variation' === $product_obj->post_type ) {
+            return $price;
+        }
+
+        $prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
+        // Translators: %s is the lowest variation price.
+        $price = $prices[0] !== $prices[1] ? sprintf( __( 'From: %s', 'your-text-domain' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+
+        return $price;
+    }
+
 
 ?>

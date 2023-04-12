@@ -682,3 +682,10 @@ form .wpcf7-select {
   font-weight: 900;
   display: inline-block;
 }
+.quantity {
+  justify-content: space-between !important;
+  display: flex;
+  .qty-text {
+    display: inline-block;
+  }
+}

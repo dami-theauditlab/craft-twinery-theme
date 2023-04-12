@@ -1367,6 +1367,15 @@ form .wpcf7-select:focus, form .wpcf7-select:visited {
   display: inline-block;
 }
 
+.quantity {
+  justify-content: space-between !important;
+  display: flex;
+}
+
+.quantity .qty-text {
+  display: inline-block;
+}
+
 .home .woocommerce-Price-amount.amount, .home .woocommerce-Price-amount.amount span {
   font-family: "PlayfairDisplay", Arial, Helvetica, sans-serif !important;
   font-size: 16px;
@@ -3599,8 +3608,10 @@ h5 {
 
 .single-product .quantity .qty {
   border: 1px solid;
-  height: 20px;
+  height: 15px;
   text-align: end;
+  padding: 10px 0px;
+  font-size: 16px;
 }
 
 .single-product .onsale {
