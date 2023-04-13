@@ -3,6 +3,7 @@
 <?php
 /**
 * A Simple Category Template
+* @version 3.4.0
 */
  
 $current_cat = get_queried_object();

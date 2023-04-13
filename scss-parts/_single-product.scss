@@ -2,7 +2,7 @@
     .product_title  {
         font-size: 36px;
         @media screen and (min-width: 990px) {
-        font-size: 60px;
+        font-size: 40px;
         }
     }
     small {
@@ -29,7 +29,7 @@
         }
     }
     #productSingleTemplateCs {
-        margin-top: 200px;
+        margin-top: 100px;
         @media screen and (min-width: 768px) {
             margin-top: 300px;
         }
@@ -57,7 +57,7 @@
         display: flex;
         margin-bottom: 0 !important;
         @media screen and (min-width: 768px) {
-            width: 70% !important;
+            width: 50% !important;
         }
         .entry-title {
             width: 100%;
@@ -67,9 +67,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        @media screen and (min-width: 990px) {
-            width: 50%;
-        }
     }
     .button {
         height: 55px;
@@ -84,6 +81,7 @@
         display: flex;
         justify-content: flex-end;
         margin: 0;
+        float: none !important;
         .qty {
             border: 1px solid;
             height: 15px;
@@ -103,11 +101,14 @@
     }
     .woocommerce-product-gallery {
         @media screen and (min-width: 768px) {
-            width: 30% !important;                    
+            width: 50% !important;                    
         }
         img {
-            min-height: 700px !important;
+            min-height: 350px !important;
             object-fit: cover;
+            @media screen and (min-width: 768px) {
+                min-height: 750px !important;                   
+            }
 
         }
     }
@@ -133,7 +134,7 @@
                 font-size: 36px;
                 max-width: 600px;
                 @media screen and (min-width: 990px) {
-                font-size: 60px;
+                font-size: 40px;
                 }
             }
             .text {
@@ -163,6 +164,11 @@
             .buttons {
                 display: flex;
                 cursor: pointer;
+                flex-direction: column;
+                align-items: center;
+                @media screen and (min-width: 768px) {
+                    flex-direction: row;
+                }
                 div {
                     padding: 20px 10px;
                     margin: 20px 4px;

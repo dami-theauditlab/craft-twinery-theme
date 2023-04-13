@@ -18,18 +18,20 @@
     $hero_slider_image_2 = get_field("hero_slider_image_2");
     $hero_slider_title_2 = get_field("hero_slider_title_2");
     $hero_slider_link_2 = get_field("hero_slider_link_2");
-    $hero_slider_shop_text_2 = $hero_slider_2["hero_slider_shop_text_2"];
-    $hero_slider_shop_link_2 =  $hero_slider_2["hero_slider_shop_link_2"];
-    $hero_slider_read_text_2 = $hero_slider_2["hero_slider_read_text_2"];
-    $hero_slider_read_link_2 =  $hero_slider_2["hero_slider_read_link_2"];
+    $hero_slider_shop_text_2 = get_field("hero_slider_shop_text_2");
+    $hero_slider_shop_link_2 =  get_field("hero_slider_shop_link_2");
+    $hero_slider_read_text_2 =  get_field("hero_slider_read_text_2");
+    $hero_slider_read_link_2 =  get_field("hero_slider_read_link_2");
+    $hero_slider_circle_text_2 =  get_field("hero_slider_circle_text_2");
 
     $hero_slider_image_3 = get_field("hero_slider_image_3");
     $hero_slider_title_3 = get_field("hero_slider_title_3");
     $hero_slider_link_3 = get_field("hero_slider_link_3");
-    $hero_slider_shop_text_3 = $hero_slider_3["hero_slider_shop_text_3"];
-    $hero_slider_shop_link_3 =  $hero_slider_3["hero_slider_shop_link_3"];
-    $hero_slider_read_text_3 = $hero_slider_3["hero_slider_read_text_3"];
-    $hero_slider_read_link_3 =  $hero_slider_3["hero_slider_read_link_3"];
+    $hero_slider_shop_text_3 = get_field("hero_slider_shop_text_3");
+    $hero_slider_shop_link_3 =  get_field("hero_slider_shop_link_3");
+    $hero_slider_read_text_3 =  get_field("hero_slider_read_text_3");
+    $hero_slider_read_link_3 =  get_field("hero_slider_read_link_3");
+    $hero_slider_circle_text_3 =  get_field("hero_slider_circle_text_3");
 ?>
 
 <section id="homepageHeroSlider">
@@ -80,7 +82,7 @@
             <div class="container">
                 <h1 class="hero-title"><?php echo $hero_slider_title_3; ?></h1>
                 <div class="button-div">
-                    <a class="shop-button" href="<?php echo $hero_slider_shop_link_3; ?>"><?php echo $hero_slider_shop_text_3; ?></a> 
+                    <a class="shop-button" href="<?php echo $hero_slider_shop_link_3; ?>">aa<?php echo $hero_slider_shop_text_3; ?></a> 
                     <a class="read-button" href="<?php echo $hero_slider_read_link_3; ?>"><?php echo $hero_slider_read_text_3; ?></a> 
                 </div>
             </div>

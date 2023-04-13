@@ -18,6 +18,13 @@
                         <div class="card-text">
                             <h2 class="product-title"><?php the_title(); ?></h2>
                             <p><?php the_excerpt(); ?></p>
+                            <?php 
+                                global $product;
+                                $price = $product->get_price_html();
+                                $including_vat = $product->price*1.2;
+                                ?>
+                                <p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>">Price <?php echo $product->get_price_html(); ?></p>
+                                <small class="incl-vat">(£<?php echo(round($including_vat, 2));?>  Incl. VAT)</small>
                         </div>
                     </div>
                 </a>
